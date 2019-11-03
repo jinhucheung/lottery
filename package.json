@@ -1,0 +1,19 @@
+{
+  "name": "lottery",
+  "version": "1.0.0",
+  "description": "A lottery application",
+  "main": "index.js",
+  "repository": "http://gitlab.bdachina.net/operation-group/lottery",
+  "author": "jimcheung <hi.jinhu.zhang@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "egg": "^2.25.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.14.0"
+  },
+  "scripts": {
+    "dev": "egg-bin dev"
+  }
+}
