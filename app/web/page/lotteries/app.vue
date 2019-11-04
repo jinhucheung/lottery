@@ -28,7 +28,7 @@
             <div class="main-bg"></div>
             <div class="bg-p"></div>
             <div class="content">
-                <div class="lottery_ticket" @click="onHandleClick">今日免费抽奖次数： {{lottery_ticket}}</div>
+                <div class="lottery_ticket">今日免费抽奖次数： {{lottery_ticket}}</div>
             </div>
             <div class="tip">
                 <div class="tip-title">活动规则</div>
