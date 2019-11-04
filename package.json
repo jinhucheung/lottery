@@ -34,7 +34,6 @@
     "simplemde": "^1.11.2",
     "vue": "^2.5.0",
     "vue-hot-reload-api": "^2.1.0",
-    "vue-i18n": "^8.1.0",
     "vue-material-input": "^1.2.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",

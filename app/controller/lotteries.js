@@ -3,10 +3,8 @@
 const Controller = require('egg').Controller;
 
 class LotteriesController extends Controller {
-  async index() {
-    const data = { name: 'egg' };
-
-    await this.ctx.render('lotteries/index.js', data);
+  async index(ctx) {
+    await ctx.render('lotteries/app.js');
   }
 }
 
