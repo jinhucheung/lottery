@@ -2,18 +2,25 @@
   "name": "lottery",
   "version": "1.0.0",
   "description": "A lottery application",
-  "main": "index.js",
   "repository": "http://gitlab.bdachina.net/operation-group/lottery",
   "author": "jimcheung <hi.jinhu.zhang@gmail.com>",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "egg": "^2.25.0"
+    "egg": "^2.25.0",
+    "egg-scripts": "^2.11.1",
+    "egg-view-nunjucks": "^2.2.0"
   },
   "devDependencies": {
-    "egg-bin": "^4.14.0"
+    "egg-bin": "^4.14.0",
+    "eslint-config-egg": "^7.5.1"
   },
   "scripts": {
-    "dev": "egg-bin dev"
+    "start": "egg-scripts start --daemon --env prod",
+    "stop": "egg-scripts stop",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "egg-bin test",
+    "cov": "egg-bin cov"
   }
 }

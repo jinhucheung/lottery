@@ -1,6 +1,14 @@
-# lottery
+# Lottery
 
 A lottery application
+
+## Installation
+
+Clone this repository to get Lottery:
+
+```
+$ git clone git@gitlab.bdachina.net:operation-group/lottery.git
+```
 
 ## QuickStart
 

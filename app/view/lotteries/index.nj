@@ -1,0 +1,13 @@
+{% extends "../layouts/base.nj" %}
+
+{% block _title %}
+    幸运轮抽奖
+{% endblock %}
+
+{% block body %}
+    幸运轮
+{% endblock %}
+
+{% block js %}
+    <script src="/public/lotteries/index.js"></script>
+{% endblock %}
