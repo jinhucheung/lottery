@@ -2,25 +2,60 @@
   "name": "lottery",
   "version": "1.0.0",
   "description": "A lottery application",
-  "repository": "http://gitlab.bdachina.net/operation-group/lottery",
-  "author": "jimcheung <hi.jinhu.zhang@gmail.com>",
-  "license": "MIT",
-  "private": true,
+  "scripts": {
+    "dev": "egg-bin dev",
+    "start": "egg-scripts start",
+    "debug": "egg-bin debug",
+    "clean": "easy clean all",
+    "build": "easy build prod",
+    "lint": "eslint .",
+    "fix": "eslint --fix ."
+  },
   "dependencies": {
-    "egg": "^2.25.0",
-    "egg-scripts": "^2.11.1",
-    "egg-view-nunjucks": "^2.2.0"
+    "axios": "^0.18.1",
+    "cross-env": "^5.0.0",
+    "egg": "^2.1.0",
+    "egg-bin": "^4.3.7",
+    "egg-cors": "^2.0.0",
+    "egg-logger": "^1.5.0",
+    "egg-scripts": "^2.5.1",
+    "egg-validate": "^1.0.0",
+    "egg-view-vue-ssr": "^3.2.0",
+    "element-ui": "^2.0.8",
+    "extend": "~3.0.0",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.4",
+    "lodash-id": "^0.14.0",
+    "lowdb": "^1.0.0",
+    "mockjs": "^1.0.1-beta3",
+    "moment": "^2.17.1",
+    "shortid": "^2.2.8",
+    "showdown": "^1.8.6",
+    "simplemde": "^1.11.2",
+    "vue": "^2.5.0",
+    "vue-hot-reload-api": "^2.1.0",
+    "vue-i18n": "^8.1.0",
+    "vue-material-input": "^1.2.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
-    "egg-bin": "^4.14.0",
-    "eslint-config-egg": "^7.5.1"
+    "@easy-team/easywebpack-cli": "^4.0.0",
+    "@easy-team/easywebpack-vue": "^4.0.0",
+    "babel-plugin-component": "^1.1.1",
+    "egg-logview": "^1.0.0",
+    "egg-webpack": "^4.4.1",
+    "egg-webpack-vue": "^2.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-egg": "^5.0.0",
+    "eslint-plugin-vue": "^4.4.0",
+    "ip": "^1.1.5"
   },
-  "scripts": {
-    "start": "egg-scripts start --daemon --env prod",
-    "stop": "egg-scripts stop",
-    "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
-    "test": "egg-bin test",
-    "cov": "egg-bin cov"
-  }
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": "http://gitlab.bdachina.net/operation-group/lottery",
+  "author": "jimcheung <hi.jinhu.zhang@gmail.com>",
+  "license": "MIT"
 }

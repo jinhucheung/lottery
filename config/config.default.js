@@ -1,40 +1,58 @@
-/* eslint valid-jsdoc: "off" */
-
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 
-/**
- * @param {Egg.EggAppInfo} appInfo app info
- */
-module.exports = appInfo => {
-  /**
-   * built-in config
-   * @type {Egg.EggAppConfig}
-   **/
-  const config = exports = {};
+module.exports = app => {
+  const exports = {};
 
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1572796313577_7394';
+  exports.siteFile = {
+    '/favicon.ico': fs.readFileSync(path.join(app.baseDir, 'app/web/asset/images/favicon.ico'))
+  };
 
-  // add your middleware config here
-  config.middleware = [];
-
-  config.view = {
-    mapping: {
-      '.nj': 'nunjucks'
+  exports.vuessr = {
+    layout: path.join(app.baseDir, 'app/web/view/layout/base.html'),
+    renderOptions: {
+      basedir: path.join(app.baseDir, 'app/view')
     },
-    defaultViewEngine: 'nunjucks',
-    defaultExtension: '.nj'
-  }
-
-  // add your user config here
-  const userConfig = {
-    // myAppName: 'egg',
+    injectRes:[
+      // {
+      //   url: 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css'
+      // },
+      // {
+      //   url: 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js'
+      // }
+    ]
   };
 
-  return {
-    ...config,
-    ...userConfig,
+  exports.logger = {
+    consoleLevel: 'DEBUG',
+    dir: path.join(app.baseDir, 'logs')
   };
+
+  exports.static = {
+    prefix: '/public/',
+    dir: path.join(app.baseDir, 'public')
+  };
+
+  exports.keys = app.name + '_123456';
+
+  exports.middleware = [
+    'locals',
+    'access'
+  ];
+
+  exports.security = {
+    csrf: {
+      ignoreJSON: false,
+      cookieName: 'csrfToken',
+      sessionName: 'csrfToken',
+      headerName: 'x-csrf-token'
+    },
+    xframe: {
+      enable: false,
+    },
+  };
+
+  return exports;
 };

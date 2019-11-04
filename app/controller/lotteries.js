@@ -6,7 +6,7 @@ class LotteriesController extends Controller {
   async index() {
     const data = { name: 'egg' };
 
-    await this.ctx.render('lotteries/index', data);
+    await this.ctx.render('lotteries/index.js', data);
   }
 }
 

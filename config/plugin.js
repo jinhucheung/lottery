@@ -1,6 +1,4 @@
-'use strict';
-
-exports.nunjucks = {
+exports.vuessr = {
   enable: true,
-  package: 'egg-view-nunjucks'
+  package: 'egg-view-vue-ssr'
 };
