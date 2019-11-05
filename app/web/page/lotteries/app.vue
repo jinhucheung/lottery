@@ -33,7 +33,7 @@
         </div>
         <div class="toast" v-show="toast">
             <div class="toast-container">
-                <!-- <img :src="toast_pictrue" class="toast-picture" v-if="!over"> -->
+                <img :src="resultPictrue" class="toast-picture" v-if="show_result_pictrue">
                 <div class="close" @click="toast=false"></div>
                 <div class="toast-title">
                   {{message}}
@@ -61,11 +61,12 @@
         message: '',
         hasPrize: false,
         rotating: false,
+        show_result_pictrue: false,
         index: 0
       };
     },
     computed: {
-      toast_pictrue() {
+      resultPictrue() {
         return this.hasPrize
           ? require("../../asset/images/congratulation.png")
           : require("../../asset/images/sorry.png");
@@ -91,6 +92,7 @@
     },
     methods: {
       hit() {
+        this.show_result_pictrue = false
         this.hasPrize = false
 
         if (this.rotating) return
@@ -117,6 +119,7 @@
                 this.count = res.data.count
                 this.rotating = false
                 this.toast = true
+                this.show_result_pictrue = true
                 this.message = this.hasPrize ? `恭喜，中奖 ${this.prizes[this.index].value}${this.prizes[this.index].name}`
                                               : "很遗憾，剁手不成功"
               }, 5000)

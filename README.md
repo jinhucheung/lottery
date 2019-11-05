@@ -43,6 +43,7 @@ $ yarn run dev
 + [egg](https://eggjs.org/)
 + [egg-vue-webpack-boilerplate](https://github.com/easy-team/egg-vue-webpack-boilerplate)
 + [lucky_wheel](https://github.com/landluck/lucky_wheel)
++ [lottery-wheel](https://github.com/fralonra/lottery-wheel)
 
 ## Contributing
 
