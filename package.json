@@ -43,6 +43,7 @@
     "@easy-team/easywebpack-cli": "^4.0.0",
     "@easy-team/easywebpack-vue": "^4.0.0",
     "babel-plugin-component": "^1.1.1",
+    "copy-webpack-plugin": "^5.0.4",
     "egg-logview": "^1.0.0",
     "egg-sequelize": "^5.2.0",
     "egg-webpack": "^4.4.1",
