@@ -11,7 +11,16 @@ module.exports = class ArticeService extends egg.Service {
   async hitLottery(id) {
     const lottery = await this.findLottery(id)
 
-    if (lottery) lottery.prizes = JSON.parse(lottery.prizes)
+    let hitCookiesKey = null
+
+    if (lottery) {
+      lottery.prizes = JSON.parse(lottery.prizes)
+
+      hitCookiesKey = `lottery-${lottery.id}-count`
+      let hitCount = this.ctx.cookies.get(hitCookiesKey)
+      hitCount = hitCount ? Number(hitCount) : 0
+      this.ctx.cookies.set(hitCookiesKey, ++hitCount)
+    }
 
     const index = Math.floor(Math.random() * lottery.prizes.length)
     const prize = lottery.prizes[index]
@@ -26,6 +35,8 @@ module.exports = class ArticeService extends egg.Service {
       }, {
         where: { id: lottery.id }
       })
+
+      // hitCookiesKey && this.ctx.cookies.set(hitCookiesKey, lottery.count)
     }
 
     const count = (hasPrize || lottery.count <= 1) ? 0 : lottery.count - 1
