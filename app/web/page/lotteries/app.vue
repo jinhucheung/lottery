@@ -28,7 +28,7 @@
             <div class="main-bg"></div>
             <div class="bg-p"></div>
             <div class="content">
-                <div class="lottery_ticket">抽奖次数: {{lottery_ticket}}</div>
+                <div class="lottery_ticket">抽奖次数: {{count}}</div>
             </div>
         </div>
         <div class="toast" v-show="toast">
@@ -85,7 +85,7 @@
     },
     methods: {
       hit() {
-        if (this.rotating && this.lottery_ticket > 0 && this.hasPrize) return;
+        if (this.rotating || this.count <= 0 || this.hasPrize) return;
 
         this.rotating = true
 
@@ -95,9 +95,9 @@
               setTimeout(() => {
                 this.index = res.data.index
                 this.hasPrize = res.data.hasPrize
-                this.lottery_ticket -= 1
+                this.count = res.data.count
                 this.rotating = false
-                this.toast = true;
+                this.toast = true
               }, 5000)
             })
           })
