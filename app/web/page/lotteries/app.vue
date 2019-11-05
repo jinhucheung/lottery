@@ -9,7 +9,7 @@
                 </div>
                 <div class="wheel-bg" :class="rotateClass" :style="hitStyle">
                     <div class="prize-list">
-                        <div class="prize-item" v-for="(item, index) in prize_list" :key="index">
+                        <div class="prize-item" v-for="(item, index) in prizes" :key="index">
                             <div class="prize-pic">
                                 <img :src="item.icon">
                             </div>
@@ -65,7 +65,7 @@
     computed: {
       toast_title() {
         return this.hasPrize
-          ? `恭喜您，获得 ${this.prize_list[this.index].value}${this.prize_list[this.index].name}`
+          ? `恭喜您，获得 ${this.prizes[this.index].value}${this.prizes[this.index].name}`
           : "未中奖";
       },
       toast_pictrue() {
@@ -80,7 +80,7 @@
         return this.rotating ? '' : `transform: rotate(${this.hitAngle}deg); transition: transform 5s ease-in-out`
       },
       hitAngle() {
-        return 360 - (360.0 / this.prize_list.length * (this.index + 1) - 180.0 / this.prize_list.length)
+        return 360 - (360.0 / this.prizes.length * (this.index + 1) - 180.0 / this.prizes.length)
       }
     },
     methods: {

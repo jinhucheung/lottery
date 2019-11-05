@@ -15,3 +15,5 @@ typings/
 config/secrets.js
 dist
 config/manifest.json
+database/config.json
+.vscode

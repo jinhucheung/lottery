@@ -4,19 +4,38 @@ const Controller = require('egg').Controller;
 
 class LotteriesController extends Controller {
   async index(ctx) {
-    await ctx.render('lotteries/app.js', this.lottery(ctx));
+    const lottery = await ctx.service.lotteries.getLastLottery()
+    await ctx.render('lotteries/app.js', this.respondLottery(lottery));
   }
 
   async show(ctx) {
-    await ctx.render('lotteries/app.js', this.lottery(ctx));
+    const lottery = await ctx.service.lotteries.findLottery(ctx.params.id)
+    await ctx.render('lotteries/app.js', this.respondLottery(lottery))
   }
 
   async create(ctx) {
-    ctx.body = ctx.service.lotteries.hitLottery(ctx.params.id)
+    let lotteryId = ctx.params.id
+
+    if (!lotteryId || lotteryId == 0) {
+      const lottery = await ctx.service.lotteries.getLastLottery()
+      lotteryId = lottery && lottery.id
+    }
+
+    ctx.body = await ctx.service.lotteries.hitLottery(lotteryId)
   }
 
-  lottery(ctx) {
-    return ctx.service.lotteries.getLottery(ctx.params.id)
+  respondLottery(lottery) {
+    if (lottery) {
+      return {
+        count: lottery.count,
+        prizes: JSON.parse(lottery.prizes)
+      }
+    } else {
+      return {
+        count: 0,
+        prizes: []
+      }
+    }
   }
 }
 

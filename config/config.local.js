@@ -1,5 +1,6 @@
 const path = require('path');
 const ip = require('ip');
+const database = require('../database/config.json');
 
 module.exports = app => {
   const exports = {};
@@ -35,6 +36,8 @@ module.exports = app => {
   });
 
   exports.security = { domainWhiteList };
+
+  exports.sequelize = database.development;
 
   return exports;
 };
