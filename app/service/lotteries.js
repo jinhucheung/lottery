@@ -22,7 +22,7 @@ module.exports = class ArticeService extends egg.Service {
       hasPrize = true
 
       this.ctx.model.Lottery.update({
-        prize: JSON.stringify(prize)
+        prizes: JSON.stringify(lottery.prizes)
       }, {
         where: { id: lottery.id }
       })
