@@ -33,13 +33,14 @@
         </div>
         <div class="toast" v-show="toast">
             <div class="toast-container">
-                <img :src="toast_pictrue" class="toast-picture">
+                <!-- <img :src="toast_pictrue" class="toast-picture" v-if="!over"> -->
                 <div class="close" @click="toast=false"></div>
                 <div class="toast-title">
-                    {{toast_title}}
+                  {{message}}
                 </div>
                 <div class="toast-btn">
-                    <div class="toast-cancel"  @click="toast=false">关闭</div>
+                  <div class="toast-cancel" @click="visit" v-if="hasPrize && selectedPrize.url">前往商城剁手</div>
+                  <div class="toast-cancel" @click="toast=false" v-else>关闭</div>
                 </div>
             </div>
         </div>
@@ -57,17 +58,13 @@
     data() {
       return {
         toast: false,
+        message: '',
         hasPrize: false,
         rotating: false,
         index: 0
       };
     },
     computed: {
-      toast_title() {
-        return this.hasPrize
-          ? `恭喜您，获得 ${this.prizes[this.index].value}${this.prizes[this.index].name}`
-          : "未中奖";
-      },
       toast_pictrue() {
         return this.hasPrize
           ? require("../../asset/images/congratulation.png")
@@ -81,11 +78,33 @@
       },
       hitAngle() {
         return 360 - (360.0 / this.prizes.length * (this.index + 1) - 180.0 / this.prizes.length)
+      },
+      selectedPrize() {
+        return this.prizes[this.index]
+      },
+      finished() {
+        return new Date(this.finished_at) < new Date()
+      },
+      over() {
+        return this.count <= 0 || this.finished
       }
     },
     methods: {
       hit() {
-        if (this.rotating || this.count <= 0 || this.hasPrize) return;
+        this.hasPrize = false
+
+        if (this.rotating) return
+        if (this.over) {
+          this.toast = true
+
+          if (this.finished) {
+            this.message = '活动已结束'
+          } else {
+            this.message = '对不起，你已参加过抽奖'
+          }
+
+          return
+        }
 
         this.rotating = true
 
@@ -98,6 +117,8 @@
                 this.count = res.data.count
                 this.rotating = false
                 this.toast = true
+                this.message = this.hasPrize ? `恭喜，中奖 ${this.prizes[this.index].value}${this.prizes[this.index].name}`
+                                              : "很遗憾，剁手不成功"
               }, 5000)
             })
           })
@@ -106,6 +127,10 @@
             this.hasPrize = false
             console.error(xhr)
           })
+      },
+      visit() {
+        this.toast = false
+        location.href = this.selectedPrize.url
       }
     }
   }

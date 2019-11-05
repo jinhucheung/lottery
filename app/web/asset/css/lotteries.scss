@@ -317,9 +317,9 @@ html {
 }
 
 .lucky-title {
-  width          : 100%;
-  height         : 8.125rem;
-  background     : url("../../asset/images/lucky_title.png") no-repeat center;
+  width     : 100%;
+  height    : 8.125rem;
+  background: url("../../asset/images/lucky_title.png") no-repeat center;
 }
 
 @media screen and (max-width:700px) {
@@ -462,14 +462,14 @@ html {
 }
 
 .main {
-  position      : relative;
-  width         : 100%;
-  height:       100%;
-  background    : rgb(243, 109, 86);
+  position  : relative;
+  width     : 100%;
+  height    : 100%;
+  background: rgb(243, 109, 86);
 }
 
 .main.content-main {
-  height:  calc(100% - 31.5625rem);
+  height: calc(100% - 31.5625rem);
 }
 
 .main-bg {
@@ -489,18 +489,18 @@ html {
 }
 
 .content {
-  position    : absolute;
-  top         : 0.175rem;
-  left        : 0;
-  background  : rgb(243, 109, 86);
-  width       : 100%;
-  font-size   : 1.125rem;
-  color       : #ffeb39;
+  position  : absolute;
+  top       : 0.175rem;
+  left      : 0;
+  background: rgb(243, 109, 86);
+  width     : 100%;
+  font-size : 1.125rem;
+  color     : #ffeb39;
 }
 
 .content div {
   text-align: center;
-  padding: 40px;
+  padding   : 40px;
 }
 
 .tip {
@@ -586,6 +586,7 @@ html {
   align-items    : center;
   justify-content: center;
   margin-bottom  : 0.9375rem;
+  cursor         : pointer;
 }
 
 .toast-btn div {

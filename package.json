@@ -4,12 +4,15 @@
   "description": "A lottery application",
   "scripts": {
     "dev": "egg-bin dev",
-    "start": "egg-scripts start",
+    "start": "egg-scripts start --daemon",
     "debug": "egg-bin debug",
     "clean": "easy clean all",
     "build": "easy build prod",
     "lint": "eslint .",
-    "fix": "eslint --fix ."
+    "fix": "eslint --fix .",
+    "create_database": "npx sequelize db:create",
+    "migrate": "npx sequelize db:migrate",
+    "seed": "npx sequelize db:seed:all"
   },
   "dependencies": {
     "axios": "^0.18.1",
@@ -28,7 +31,6 @@
     "lodash-id": "^0.14.0",
     "lowdb": "^1.0.0",
     "mockjs": "^1.0.1-beta3",
-    "moment": "^2.17.1",
     "shortid": "^2.2.8",
     "showdown": "^1.8.6",
     "simplemde": "^1.11.2",

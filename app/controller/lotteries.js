@@ -26,10 +26,12 @@ class LotteriesController extends Controller {
 
   respondLottery(ctx, lottery) {
     if (lottery) {
-      const count = lottery.count - (ctx.cookies.get(`lottery-${lottery.id}-count`) || 0)
+      let count = lottery.count - (ctx.cookies.get(`lottery-${lottery.id}-count`) || 0)
+      if (count < 0) count = 0
 
       return {
-        count: count,
+        count,
+        finished_at: lottery.finished_at,
         prizes: JSON.parse(lottery.prizes)
       }
     } else {

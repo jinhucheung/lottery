@@ -8,6 +8,7 @@ module.exports = {
       name: STRING(255),
       count: INTEGER,
       prizes: TEXT,
+      finished_at: DATE,
       created_at: DATE,
       updated_at: DATE,
     });
