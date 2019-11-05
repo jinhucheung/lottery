@@ -8,12 +8,14 @@ module.exports = {
         count: 10,
         value: '10 元',
         name: "购物券",
+        weight: 5,
         isPrize: 1
       },
       {
         icon: "/public/images/give_up.png",
-        count: 30,
+        count: 40,
         name: "未中奖",
+        weight: 7,
         isPrize: 0
       },
       {
@@ -21,6 +23,7 @@ module.exports = {
         count: 8,
         value: '20 元',
         name: "购物券",
+        weight: 4,
         isPrize: 1
       },
       {
@@ -28,6 +31,7 @@ module.exports = {
         count: 6,
         value: "30 元",
         name: "购物券",
+        weight: 3,
         isPrize: 1
       },
       {
@@ -35,12 +39,14 @@ module.exports = {
         count: 6,
         value: '50 元',
         name: "购物券",
+        weight: 2,
         isPrize: 1
       },
       {
         icon: "/public/images/give_up.png",
-        count: 30,
+        count: 40,
         name: "未中奖",
+        weight: 7,
         isPrize: 0
       },
       {
@@ -48,12 +54,14 @@ module.exports = {
         count: 2,
         value: '100 元',
         name: "购物券",
+        weight: 1,
         isPrize: 1
       },
       {
         icon: "/public/images/give_up.png",
-        count: 30,
+        count: 40,
         name: "未中奖",
+        weight: 7,
         isPrize: 0
       }
     ]

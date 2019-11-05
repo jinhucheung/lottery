@@ -21,8 +21,23 @@ module.exports = class ArticeService extends egg.Service {
       }
     }
 
+    let weightSum = 0
     lottery.prizes = JSON.parse(lottery.prizes)
-    index = Math.floor(Math.random() * lottery.prizes.length)
+    lottery.prizes.forEach(prize => {
+      if (!prize.weight) prize.weight = 1
+      weightSum += prize.weight
+    })
+
+    const random = Math.random() * weightSum
+    let randomWeight = 0
+    for (let i = 0; i < lottery.prizes.length; i++) {
+      randomWeight += lottery.prizes[i].weight
+
+      if (randomWeight > random) {
+        index = i
+        break
+      }
+    }
     let prize = lottery.prizes[index]
 
     if (prize.count <= 0 || lottery.finished_at <= new Date()) {
