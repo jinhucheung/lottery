@@ -14,7 +14,7 @@ Then copy configurations:
 
 ```
 $ cd lottery
-$ cp config.prod.js.example config.prod.js
+$ cp database/config.json.example database/config.json
 ```
 
 And execute:
