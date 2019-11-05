@@ -314,14 +314,18 @@ html {
   height         : 31.5625rem;
   background     : rgb(252, 207, 133) url("../../asset/images/color_pillar.png") no-repeat center bottom;
   background-size: 100%;
-  padding-top    : 1.5625rem;
 }
 
 .lucky-title {
   width          : 100%;
   height         : 8.125rem;
-  background     : url("../../asset/images/lucky_title.png") no-repeat center top;
-  background-size: 100%;
+  background     : url("../../asset/images/lucky_title.png") no-repeat center;
+}
+
+@media screen and (max-width:700px) {
+  .lucky-title {
+    background-size: 90%;
+  }
 }
 
 .wheel-main {
@@ -329,6 +333,12 @@ html {
   align-items    : center;
   justify-content: center;
   position       : relative;
+}
+
+@media screen and (min-width:700px) {
+  .wheel-main {
+    transform: scale(0.95);
+  }
 }
 
 .wheel-bg {
@@ -439,7 +449,7 @@ html {
   margin-top: 1.5625rem;
 }
 
-.prize-count {
+.prize-value {
   font-size: 0.875rem;
 }
 
@@ -447,12 +457,19 @@ html {
   font-size: 0.75rem;
 }
 
+#app {
+  height: 100%;
+}
+
 .main {
   position      : relative;
   width         : 100%;
-  min-height    : 14.25rem;
+  height:       100%;
   background    : rgb(243, 109, 86);
-  padding-bottom: 1.6875rem;
+}
+
+.main.content-main {
+  height:  calc(100% - 31.5625rem);
 }
 
 .main-bg {
@@ -477,14 +494,13 @@ html {
   left        : 0;
   background  : rgb(243, 109, 86);
   width       : 100%;
-  height      : 5.1875rem;
   font-size   : 1.125rem;
   color       : #ffeb39;
-  padding-left: 6.75rem;
 }
 
 .content div {
-  text-align: left;
+  text-align: center;
+  padding: 40px;
 }
 
 .tip {
@@ -603,4 +619,14 @@ html {
   height         : 2rem;
   background     : url("../../asset/images/close_store.png") no-repeat center top;
   background-size: 100%;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 2s linear infinite;
 }
