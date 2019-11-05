@@ -27,8 +27,8 @@ Then do migrate:
 
 ```
 $ npx sequelize db:create
-$ npm sequelize db:migrate
-$ npm sequelize db:seed:all
+$ npx sequelize db:migrate
+$ npx sequelize db:seed:all
 ```
 
 ## Usage
