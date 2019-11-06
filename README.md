@@ -1,6 +1,6 @@
 # Lottery
 
-A lottery application
+A lottery application on [egg](https://eggjs.org/)
 
 ## Installation
 
@@ -38,6 +38,7 @@ Start application:
 ```
 $ yarn run dev
 ```
+
 ## Thanks
 
 + [egg](https://eggjs.org/)
