@@ -604,12 +604,13 @@ html {
       rgb(252, 124, 88) 51%,
       rgb(252, 124, 88) 99%);
   box-shadow   : 0px 4px 0px 0px rgba(174, 34, 5, 0.7);
-  width        : 4.6875rem;
+  min-width    : 4.6875rem;
   height       : 1.875rem;
   border-radius: 1.875rem;
   text-align   : center;
   line-height  : 1.875rem;
   color        : #fff;
+  padding      : 0 8px;
 }
 
 .close {
