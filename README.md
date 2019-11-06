@@ -7,7 +7,7 @@ A lottery application
 Clone this repository to get lottery:
 
 ```
-$ git clone git@gitlab.bdachina.net:operation-group/lottery.git
+$ git clone git@github.com:jinhucheung/lottery.git
 ```
 
 Then copy configurations:
