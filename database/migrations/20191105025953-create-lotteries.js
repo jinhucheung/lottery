@@ -11,6 +11,8 @@ module.exports = {
       finished_at: DATE,
       created_at: DATE,
       updated_at: DATE,
+    }, {
+      charset: 'utf8mb4'
     });
   },
 

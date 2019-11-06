@@ -31,6 +31,7 @@
     "lodash-id": "^0.14.0",
     "lowdb": "^1.0.0",
     "mockjs": "^1.0.1-beta3",
+    "mysql2": "^2.0.0",
     "shortid": "^2.2.8",
     "showdown": "^1.8.6",
     "simplemde": "^1.11.2",
@@ -54,7 +55,6 @@
     "eslint-config-egg": "^5.0.0",
     "eslint-plugin-vue": "^4.4.0",
     "ip": "^1.1.5",
-    "mysql2": "^2.0.0",
     "sequelize-cli": "^5.5.1"
   },
   "engines": {
