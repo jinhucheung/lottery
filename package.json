@@ -24,9 +24,7 @@
     "egg-scripts": "^2.5.1",
     "egg-validate": "^1.0.0",
     "egg-view-vue-ssr": "^3.2.0",
-    "element-ui": "^2.0.8",
     "extend": "~3.0.0",
-    "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
     "lodash-id": "^0.14.0",
     "lowdb": "^1.0.0",
@@ -37,9 +35,6 @@
     "simplemde": "^1.11.2",
     "vue": "^2.5.0",
     "vue-hot-reload-api": "^2.1.0",
-    "vue-material-input": "^1.2.0",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
